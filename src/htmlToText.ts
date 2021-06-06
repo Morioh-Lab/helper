@@ -1,0 +1,1 @@
+export default (html) => html ? html.replace(/<[^>]*>/g, '') : '';

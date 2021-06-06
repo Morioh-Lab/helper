@@ -1,0 +1,1 @@
+export default (lnk) => lnk ? new URL(lnk).hostname : '-';
