@@ -1,1 +1,1 @@
-export default function (t: any, unix?: boolean): number;
+export default function (t?: any, unix?: boolean): number;

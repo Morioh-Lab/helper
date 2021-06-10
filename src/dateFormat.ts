@@ -11,7 +11,7 @@
  * The date defaults to the current date/time.
  * The mask defaults to dateFormat.masks.default.
  */
-export default (date, mask, config) => {
+export default (date = null, mask = null, option = null) => {
 
 
     const token = /d{1,4}|D{3,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|W{1,2}|[LlopSZN]|"[^"]*"|'[^']*'/g;
@@ -207,7 +207,7 @@ export default (date, mask, config) => {
     };
 
     // let's start
-    config = Object.assign({}, defaults, config || {});
+    const config = Object.assign({}, defaults, option || {});
     let utc = config.utc;
     let gmt = config.gmt;
 

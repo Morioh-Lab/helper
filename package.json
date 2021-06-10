@@ -1,11 +1,12 @@
 {
   "name": "@morioh/helper",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "Morioh Helper",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "prod": "webpack --config webpack.config.js --mode production --progress",
+    "pub": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

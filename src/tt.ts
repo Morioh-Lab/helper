@@ -1,4 +1,4 @@
-export default function (t, unix = true) {
+export default function (t = null, unix = true) {
 
     var d = unix ? Math.floor(Date.now() / 1000) : Date.now();
 
