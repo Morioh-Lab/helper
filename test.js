@@ -1,6 +1,10 @@
 // import { encrypt } from './src/index';
 
-const { encrypt, random, md5, objectID } = require('./dist');
+const { encrypt, decrypt } = require('./dist');
 
 
-console.log(objectID(),objectID('60c18428beb0a830d306d38d'));
+// var s = encrypt("hello","huyhuy");
+// console.log(s, decrypt(s, 'huyhuy'));
+
+
+console.log(new URL('https://localhost:8080'));

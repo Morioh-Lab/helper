@@ -22,6 +22,7 @@ import sha512 from './sha512';
 import encrypt from './encrypt';
 import decrypt from './decrypt';
 import password from './password';
+import delay from './delay';
 
 
 export {
@@ -38,6 +39,7 @@ export {
     dateFormat,
     queryString,
     htmlToText,
+    delay,
     trim,
     toKb,
     random,

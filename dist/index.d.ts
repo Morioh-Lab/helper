@@ -20,4 +20,5 @@ import sha512 from './sha512';
 import encrypt from './encrypt';
 import decrypt from './decrypt';
 import password from './password';
-export { tt, now, host, isBlank, isUrl, isImage, isObjectID, objectID, toggleClass, numberFormat, dateFormat, queryString, htmlToText, trim, toKb, random, md5, sha256, sha512, encrypt, decrypt, password };
+import delay from './delay';
+export { tt, now, host, isBlank, isUrl, isImage, isObjectID, objectID, toggleClass, numberFormat, dateFormat, queryString, htmlToText, delay, trim, toKb, random, md5, sha256, sha512, encrypt, decrypt, password };
