@@ -1,1 +1,1 @@
-export default function (url: any, callback: any, location?: HTMLHeadElement): void;
+export default function (url: string): Promise<unknown>;

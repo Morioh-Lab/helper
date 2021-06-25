@@ -21,4 +21,5 @@ import encrypt from './encrypt';
 import decrypt from './decrypt';
 import password from './password';
 import delay from './delay';
-export { tt, now, host, isBlank, isUrl, isImage, isObjectID, objectID, toggleClass, numberFormat, dateFormat, queryString, htmlToText, delay, trim, toKb, random, md5, sha256, sha512, encrypt, decrypt, password };
+import load from './load';
+export { tt, now, host, isBlank, isUrl, isImage, isObjectID, objectID, toggleClass, numberFormat, dateFormat, queryString, htmlToText, delay, load, trim, toKb, random, md5, sha256, sha512, encrypt, decrypt, password };

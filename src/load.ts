@@ -1,16 +1,21 @@
-export default function (url, callback, location = document.head) {
-    //url is URL of external file, implementationCode is the code
-    //to be called from the file, location is the location to 
-    //insert the <script> element
+export default function (url: string) {
+    return new Promise((resolve, reject) => {
+        let el;
+        if ((/\.(js)$/i).test(url)) {
+            el = document.createElement("script");
+            el.src = url;
+            el.async = true;
+            el.type = "text/javascript";
 
-    var script = document.createElement('script');
-    // script.type = 'text/javascript';
-    script.src = url;
-    script.async = true;
+        } else {
+            el = document.createElement('link');
+            el.type = 'text/css';
+            el.rel = 'stylesheet';
+            el.href = url;
+        }
 
-    script.onload = callback;
-    // script.onreadystatechange = callback;
+        el.onload = () => { resolve(el) };
+        document.head.appendChild(el);
 
-    location.appendChild(script);
-    // document.head.appendChild(scriptTag);
+    });
 };
