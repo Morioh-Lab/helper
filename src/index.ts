@@ -1,5 +1,6 @@
 
 import tt from './tt'
+import debounce from './debounce'
 import host from './host';
 import isBlank from './isBlank';
 import isUrl from './isUrl';
@@ -29,6 +30,7 @@ import load from './load';
 export {
     tt,
     now,
+    debounce,
     host,
     isBlank,
     isUrl,

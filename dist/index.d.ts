@@ -1,4 +1,5 @@
 import tt from './tt';
+import debounce from './debounce';
 import host from './host';
 import isBlank from './isBlank';
 import isUrl from './isUrl';
@@ -22,4 +23,4 @@ import decrypt from './decrypt';
 import password from './password';
 import delay from './delay';
 import load from './load';
-export { tt, now, host, isBlank, isUrl, isImage, isObjectID, objectID, toggleClass, numberFormat, dateFormat, queryString, htmlToText, delay, load, trim, toKb, random, md5, sha256, sha512, encrypt, decrypt, password };
+export { tt, now, debounce, host, isBlank, isUrl, isImage, isObjectID, objectID, toggleClass, numberFormat, dateFormat, queryString, htmlToText, delay, load, trim, toKb, random, md5, sha256, sha512, encrypt, decrypt, password };

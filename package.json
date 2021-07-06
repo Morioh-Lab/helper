@@ -1,6 +1,6 @@
 {
   "name": "@morioh/helper",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Morioh Helper",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -23,15 +23,12 @@
     "url": "https://github.com/Morioh-Lab/helper/issues"
   },
   "homepage": "https://github.com/Morioh-Lab/helper#readme",
-
-  "devDependencies": {   
-    
-    "@types/jest": "^26.0.23",    
-    "@types/node": "^15.6.1",    
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.6.1",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^4.25.0",
     "@typescript-eslint/parser": "^4.25.0",
-    "del-cli": "^3.0.1",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
