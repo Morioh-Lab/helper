@@ -24,7 +24,8 @@ import encrypt from './encrypt';
 import decrypt from './decrypt';
 import password from './password';
 import delay from './delay';
-import load from './load';
+// import load from './load';
+import register from './register';
 
 
 export {
@@ -43,7 +44,8 @@ export {
     queryString,
     htmlToText,
     delay,
-    load,
+    // load,
+    register,
     trim,
     toKb,
     random,
