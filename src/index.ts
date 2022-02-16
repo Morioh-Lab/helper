@@ -14,7 +14,7 @@ const isUrl = (input: string | null | undefined) => /((http(s)?):\/\/[\w\.\/\-=?
 
 const isImage = (input: string | null | undefined) => (/\.(gif|jpe?g|tiff|png|webp|bmp)$/i).test(input);
 
-const isObjectID = (id: string | null | undefined) => /^[0-9a-fA-F]{24}$/.test(id);
+const isObjectID = (id: any) => /^[0-9a-fA-F]{24}$/.test(id);
 
 const now = () => Math.floor(Date.now() / 1000);
 
@@ -46,7 +46,7 @@ const tt = (t: any = null, unix: boolean = true) => {
     }
 }
 
-const objectID = (id: string | null | undefined) => {
+const objectID = (id: any) => {
     if (isObjectID(id)) return id;
     var timestamp = (new Date().getTime() / 1000 | 0).toString(16);
     return timestamp + 'xxxxxxxxxxxxxxxx'.replace(/[x]/g, function () {
@@ -122,4 +122,4 @@ const debounce = (func: Function, wait: number) => {
 }
 
 
-export { now, trim, htmlToText, isBlank, isImage, isUrl, isNullOrUndefined, isObjectID, objectID, debounce, delay, toKb, numberFormat, LINK, host }
+export { now, tt, trim, htmlToText, isBlank, isImage, isUrl, isNullOrUndefined, isObjectID, objectID, debounce, delay, toKb, numberFormat, LINK, host }
