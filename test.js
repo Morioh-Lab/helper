@@ -1,5 +1,6 @@
 
-const { LINK } = require("./dist");
+const { classNames } = require("./dist");
 
+var arr = ['b', { c: true, d: false }];
 
-console.log(LINK("https://morioh.com?abc=1", { utm_source: "morioh.com" }).toString())
+console.log(classNames('foo', { bar: true, duck: false }, 'baz', { quux: true }))
