@@ -1,25 +1,19 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
-const trim = (input: string) =>
-   input.replace(/\r?\n|\r/g, ' ').replace(/ +/g, ' ');
+const trim = (input: string) => input.replace(/\r?\n|\r/g, ' ').replace(/ +/g, ' ');
 
-const htmlToText = (html: string | null | undefined) =>
-   isBlank(html) ? '' : trim(html.replace(/<[^>]*>/g, ''));
+const htmlToText = (html: string | null | undefined) => (isBlank(html) ? '' : trim(html.replace(/<[^>]*>/g, '')));
 
-const delay = async (ms: number) =>
-   new Promise((resolve) => setTimeout(resolve, ms));
+const delay = async (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const isNullOrUndefined = (input: any) => input === undefined || input === null;
 
-const isBlank = (input: any) =>
-   isNullOrUndefined(input) || /^[\s\xa0]*$/.test(input);
+const isBlank = (input: any) => isNullOrUndefined(input) || /^[\s\xa0]*$/.test(input);
 
-const isUrl = (input: string | null | undefined) =>
-   /((http(s)?):\/\/[\w\.\/\-=?#]+)/i.test(input);
+const isUrl = (input: string | null | undefined) => /((http(s)?):\/\/[\w\.\/\-=?#]+)/i.test(input);
 
-const isImage = (input: string | null | undefined) =>
-   /\.(gif|jpe?g|tiff|png|webp|bmp)$/i.test(input);
+const isImage = (input: string | null | undefined) => /\.(gif|jpe?g|tiff|png|webp|bmp)$/i.test(input);
 
 const isObjectID = (id: any) => /^[0-9a-fA-F]{24}$/.test(id);
 
@@ -35,9 +29,7 @@ const tt = (t: any = null, unix = true) => {
    const regex = /^(?:\-?\d+\.?\d*|\d*\.?\d+)(y|d|h|m|s)$/i;
 
    if (regex.test(t)) {
-      const num =
-         parseInt(t.replace(/^(\-?\d+\.?\d*|\d*\.?\d+)(?:y|d|h|m|s)$/i, '$1')) *
-         (unix ? 1 : 1000);
+      const num = parseInt(t.replace(/^(\-?\d+\.?\d*|\d*\.?\d+)(?:y|d|h|m|s)$/i, '$1')) * (unix ? 1 : 1000);
       const s = t.replace(regex, '$1').toLowerCase();
 
       switch (s) {
@@ -102,11 +94,7 @@ const numberFormat = (number: any, padding = 2, dsep = '.', tsep = ',') => {
    return fnums.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + tsep) + decimals;
 };
 
-const toKb = (
-   num: number | null | undefined,
-   suffix: any = undefined,
-   decimal = 2
-) => {
+const toKb = (num: number | null | undefined, suffix: any = undefined, decimal = 2) => {
    if (!isNaN(suffix) && !!suffix) {
       decimal = suffix;
       suffix = undefined;
@@ -117,11 +105,9 @@ const toKb = (
    const k = 1000,
       dm = decimal || 2;
 
-   if (num < k) return num;
+   if (num < k) return numberFormat(num, dm);
 
-   const i = suffix
-      ? sizes.indexOf(suffix)
-      : Math.floor(Math.log(num) / Math.log(k));
+   const i = suffix ? sizes.indexOf(suffix) : Math.floor(Math.log(num) / Math.log(k));
    //return parseFloat((num / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
    return numberFormat(num / Math.pow(k, i), dm) + sizes[i];
 };
@@ -153,7 +139,7 @@ const classNames = (...args: any[]) => {
       } else if (Array.isArray(arg)) {
          if (arg.length) {
             // eslint-disable-next-line prefer-spread
-            const inner = classNames.apply(null, arg);
+            const inner = classNames(...arg);
             if (inner) {
                classes.push(inner);
             }
@@ -174,22 +160,4 @@ const classNames = (...args: any[]) => {
    return classes.join(' ');
 };
 
-export {
-   now,
-   tt,
-   trim,
-   classNames,
-   htmlToText,
-   isBlank,
-   isImage,
-   isUrl,
-   isNullOrUndefined,
-   isObjectID,
-   objectID,
-   debounce,
-   delay,
-   toKb,
-   numberFormat,
-   LINK,
-   host,
-};
+export { now, tt, trim, classNames, htmlToText, isBlank, isImage, isUrl, isNullOrUndefined, isObjectID, objectID, debounce, delay, toKb, numberFormat, LINK, host };
